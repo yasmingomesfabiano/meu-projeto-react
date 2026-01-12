@@ -1,0 +1,437 @@
+/* ===== APP ===== */
+.app {
+  padding-top: 80px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 0 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.title {
+  font-size: 26px;
+  color: #0466c8;
+  margin: 0;
+  margin-left: 50px;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 4px;
+  width: 100%;
+  background: #0466c8;
+  border-radius: 4px;
+}
+
+/* ===== MENU MOBILE ===== */
+.mobileMenu {
+  position: fixed;
+  top: 40px;
+  left: -260px;
+  width: 220px;
+  height: calc(100vh - 70px);
+  background: #0466c8;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.mobileMenu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.open {
+  left: 0;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  display: flex;
+  justify-content: left;
+  margin: 40px 0;
+}
+
+/* ===== BOTÃO PUBLICAR ===== */
+.btnPublicar {
+  background: #0466c8;
+  color: white;
+  width: 15vw;
+  height: 5vh;
+  margin-left: 50px;
+  border-radius: 30px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btnPublicar:hover {
+  background: #0085c7;
+  transform: scale(1.05);
+}
+
+/* ===== CARDS ===== */
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 0 20px 100px; 
+  min-height: 500px; 
+  flex: 1;
+}
+
+.cardPet {
+  position: relative;
+  width: 260px;
+  background: white;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 55vh;
+}
+
+.cardPet img {
+  width: 15vw;
+  height: 25vh;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.cardPet p {
+  font-size: 14px;
+  text-align: justify;
+  color: #333;
+  font-family: 'Namdhinggo', sans-serif;
+}
+.cardPet p::first-letter {
+  text-transform: uppercase;
+}
+
+/* ===== BOTÃO WHATSAPP ===== */
+.btnWhatsapp {
+  display: inline-block;
+  width: 160px;
+  height: 45px;
+  background: #25d366;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.btnWhatsapp:hover {
+  transform: scale(1.05);
+}
+
+/* ===== MENSAGEM SEM PETS ===== */
+.noPetsMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 400px;
+  text-align: center;
+  color: #666;
+  flex: 1;
+}
+
+.noPetsMessage p {
+  font-size: 20px;
+  margin: 10px 0;
+  font-weight: 300;
+}
+
+.noPetsMessage p:first-child {
+  font-size: 24px;
+  color: #999;
+}
+
+/* ===== MODAL ===== */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modalOverlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modalContent {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.modalContent h2 {
+  text-align: center;
+  color: #0466c8;
+  margin-top: 0;
+}
+
+.modalContent input,
+.modalContent select {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.modalActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.modalActions button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.modalActions button[type="submit"] {
+  background: #0466c8;
+  color: white;
+}
+
+.modalActions button[type="submit"]:hover {
+  background: #0466c8;
+}
+
+.modalActions button[type="button"] {
+  background: #ccc;
+  color: #333;
+}
+
+.modalActions button[type="button"]:hover {
+  background: #bbb;
+}
+
+/* ===== MENU HAMBURGUER PET ===== */
+.hamburgerPet {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburgerPet span {
+  height: 3px;
+  width: 80%;
+  background: #0466c8;
+  border-radius: 2px;
+}
+
+.petMenu {
+  position: absolute;
+  top: 38px;
+  right: 12px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  min-width: 130px;
+  padding: 4px 0;
+  z-index: 100;
+}
+
+.petMenu button {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+.petMenu button:hover {
+  background: #f8f9fa;
+}
+
+/* ===== SEARCH ===== */
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.searchInput {
+  width: 320px;
+  max-width: 90%;
+  height: 30px;
+  padding: 12px 18px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.searchInput:focus {
+  border-color: #0466c8;
+  box-shadow: 0 0 0 2px rgba(4, 102, 200, 0.2);
+}
+
+/* ===== FOOTER (CORRIGIDO) ===== */
+.footer {
+  background: var(--color-primary, #0466c8);
+  color: #fff;
+  padding: 35px 20px;
+  margin-top: auto; /* Empurra para baixo */
+  text-align: center;
+  border-radius: 40px 40px 0 0;
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+  flex-shrink: 0; /* Não encolhe */
+}
+
+.footer p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* ===== FILTRO POR ESPÉCIE ===== */
+.selecao {
+  border-radius: 40px;
+  width: 15vw;
+  height: 5vh;
+  margin-left: 50px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  display: block;
+  
+}
+
+/* ===== CONFIRMAÇÃO DELETE ===== */
+.confirmOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.confirmOverlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.confirmBox {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.confirmActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.confirmYes {
+  background: #0466c8;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  flex: 1;
+}
+
+.confirmYes:hover {
+  background: #0466c8;
+}
+
+.confirmNo {
+  background: #ccc;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  flex: 1;
+}
+
+.confirmNo:hover {
+  background: #bbb;
+}
