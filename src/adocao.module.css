@@ -2,21 +2,22 @@
   --color-primary: #0466c8;
 }
 
-
 body{
   padding: 0;
   margin: 0;
-  padding-top: 80px;
+  padding-top: clamp(60px, 12vh, 80px);
 }
+
 h1{
   text-align: left;
 }
+
 .header {
-  position: fixed;    
+  position: fixed;     
   top: 0;
   left: 0;
   width: 100%;
-  padding: 10px 40px;
+  padding: clamp(8px, 2vh, 10px) clamp(20px, 5vw, 40px);
   background: white;
   display: flex;
   align-items: center;
@@ -24,59 +25,62 @@ h1{
   flex-direction: row;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   z-index: 1000;
-  
 }
 
 .header h1 {
   margin: 0;
-  font-size: 26px;
+  font-size: clamp(20px, 5vw, 26px);
   color: var(--color-primary);
-  margin-left: 50px;
+  margin-left: clamp(10px, 3vw, 50px);
 }
 
 .container p{
-  font-size: 18px;
+  font-size: clamp(16px, 3vw, 18px);
   text-align: center;
   text-align: justify;
   font-family: 'Namdhinggo', sans-serif;
-  word-spacing: 2px;
+  word-spacing: clamp(1px, 0.5vw, 2px);
 }
+
 .container{
-  width: 60vw;
+  width: clamp(320px, 60vw, 900px);
   margin: 0 auto;
+  padding: 0 clamp(10px, 2vw, 20px);
 }
 
 .footer {
   background: var(--color-primary);
   color: #fff;
-  padding: 35px 20px;
-  margin-top: 60px;
+  padding: clamp(25px, 6vh, 35px) clamp(15px, 4vw, 20px);
+  margin-top: clamp(40px, 10vh, 60px);
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  border-radius: 40px 40px 0 0;
+  gap: clamp(15px, 3vh, 20px);
+  border-radius: clamp(25px, 6vw, 40px) clamp(25px, 6vw, 40px) 0 0;
   box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
 }
 
 .footer p {
   margin: 0;
-  font-size: 18px;
+  font-size: clamp(14px, 3vw, 18px);
   font-weight: 500;
 }
 
 .footer-nav {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: clamp(12px, 5vw, 25px);
+  flex-wrap: wrap;
 }
 
 .footer-nav a {
   color: white;
   text-decoration: none;
-  font-size: 15px;
+  font-size: clamp(12px, 2.5vw, 15px);
   font-weight: bold;
   transition: 0.3s ease-in-out;
+  padding: clamp(4px, 1vh, 6px) clamp(8px, 2vw, 12px);
 }
 
 .footer-nav a:hover {
@@ -84,44 +88,108 @@ h1{
   text-decoration: underline;
 }
 
-/* Ícone WhatsApp botão */
+/* Ícone WhatsApp botão - AGORA MUITO MAIOR! */
 .wh-fab {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: #25d366;
   color: white;
-  width: 7vw;
-  height: 4vh;
-  border-radius: 30px;
+  min-height: 60px;
+  width: clamp(140px, 22vw, 220px);
+  height: clamp(50px, 8vh, 65px);
+  border-radius: 35px;
   text-decoration: none;
-  font-size: 12px;
+  font-size: clamp(14px, 3vw, 16px);
   font-weight: bold;
-  margin: 10px auto;
+  margin: 12px auto;
   transition: 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  line-height: 1.2;
 }
 
 .wh-fab:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
+
 .in-fab {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: #e500a4;
   color: white;
-  width: 7vw;
-  height: 4vh;
-  border-radius: 30px;
+  min-height: 60px;
+  width: clamp(140px, 22vw, 220px);
+  height: clamp(50px, 8vh, 65px);
+  border-radius: 35px;
   text-decoration: none;
-  font-size: 12px;
+  font-size: clamp(14px, 3vw, 16px);
   font-weight: bold;
-  margin: 10px 10px auto;
+  margin: 12px auto;
   transition: 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  line-height: 1.2;
 }
 
 .in-fab:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+/* RESPONSIVIDADE MOBILE - BOTÕES ENORMES! */
+@media (max-width: 768px) {
+  body {
+    padding-top: 65px;
+  }
+  
+  .header {
+    padding: clamp(6px, 1.5vh, 8px) 15px;
+  }
+  
+  .header h1 {
+    margin-left: 5px;
+  }
+  
+  .container {
+    width: 95vw;
+  }
+  
+  .footer-nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* BOTÕES GIGANTES NO TABLET */
+  .wh-fab, .in-fab {
+    width: 95vw !important;
+    height: 65px !important;
+    font-size: 20px !important;
+    min-height: 65px !important;
+    margin: 10px auto !important;
+    border-radius: 40px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 55px;
+  }
+  
+  .header {
+    padding: 5px 10px;
+  }
+  
+  .header h1 {
+    font-size: 18px;
+    margin-left: 2px;
+  }
+  
+  /* BOTÕES ULTRA-GRANDES NO CELULAR */
+  .wh-fab, .in-fab {
+    width: 96vw !important;
+    height: 70px !important;
+    font-size: 22px !important;
+    min-height: 70px !important;
+    margin: 12px auto !important;
+    border-radius: 45px !important;
+  }
 }

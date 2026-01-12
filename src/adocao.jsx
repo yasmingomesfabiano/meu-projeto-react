@@ -16,7 +16,7 @@ export default function Saibamais() {
 
         <nav className={`mobile-menu ${menuOpen ? "open" : ""}`}>
           <Link to="/">Início</Link>
-          <Link to="/adocao">Adoção</Link>
+          <Link to="/adocao">Saiba Mais</Link>
           <Link to="/contato">Contato</Link>
         </nav>
 

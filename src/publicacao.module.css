@@ -435,3 +435,58 @@
 .confirmNo:hover {
   background: #bbb;
 }
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 20px;
+    height: 8cqi;
+    font-size: 12px;
+  }
+  
+  .passo-passo {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .hamburger {
+    display: flex;
+    height: 20px;
+    width: 20px;
+  }
+  
+  
+  .footer-nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .cardPet{
+    width: 70vw;
+    height: 65vh;
+    margin: 0 auto;
+  }
+  .cardPet img{
+    width: 60vw;
+    height: 80vh;
+  }
+  .btnWhatsapp{
+    height: 20vw;
+  }
+  .selecao{
+    width: 50vw;
+    margin: 30px auto;
+  }
+  .btnPublicar{
+    width: 50vw;
+    margin: 0 auto;
+    
+  }
+  .searchInput{
+    width: 60vw;
+    font-size: 12px;
+  }
+
+  
+}

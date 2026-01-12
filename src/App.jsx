@@ -6,7 +6,7 @@ import Contato from "./contato";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/meu-projeto-react"> 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/publicacao" element={<Publicacao />} />

@@ -320,6 +320,83 @@ h2{
 }
 
 
+/*RESPONDIVIDADE*/
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 20px;
+  }
+  
+  .passo-passo {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .btn-primary {
+    display: none;
+  }
+  
+  .footer-nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 70px;
+  }
+  
+  .slider img {
+    width: 90vw;
+    height: 40vh;
+  }
+
+@media(max-width: 480px){
+  .descricao{
+    width: 80vw;
+    height: 40vh;
+    font-size: 4px;
+    text-align: center;
+    text-align: justify;
+    margin: 20px auto;
+  }
+  .box-descricao{
+  width: 80vw;
+  height: 30vh;
+  font-size: 12px;
+  text-align: center;
+  text-align: justify;
+  margin: 0 auto;
+}
+
+  .descricao h2{
+    font-size: 15px;
+  }
+
+}
+
+  .cards{
+    width: 70vw;
+    text-justify: inter-word;
+    hyphens: auto
+  }
+
+  .wh-fab{
+    width: 20vw;
+  }
+  .in-fab{
+    width: 20vw;
+  }
+
+}
+
+
+
 
 
 

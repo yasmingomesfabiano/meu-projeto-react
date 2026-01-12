@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "./publicacao.module.css";
 import { supabase } from "./supabase";
 
+
 export default function Publicacao() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);

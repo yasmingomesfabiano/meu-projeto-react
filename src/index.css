@@ -5,7 +5,7 @@
 body {
   padding: 0;
   margin: 0;
-  padding-top: 80px;
+  padding-top: clamp(60px, 12vh, 80px);
 }
 
 h1 {
@@ -17,7 +17,7 @@ h1 {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 10px 40px;
+  padding: clamp(8px, 2vh, 10px) clamp(20px, 5vw, 40px);
   background: white;
   display: flex;
   align-items: center;
@@ -28,24 +28,67 @@ h1 {
 
 .header h1 {
   margin: 0;
-  font-size: 26px;
+  font-size: clamp(20px, 5vw, 26px);
   color: var(--color-primary);
-  margin-left: 50px;
+  margin-left: clamp(10px, 3vw, 50px);
 }
 
 .btn-primary {
   background: var(--color-primary);
   color: white;
   border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
+  padding: clamp(8px, 2vh, 10px) clamp(12px, 4vw, 18px);
+  border-radius: clamp(6px, 1.5vw, 8px);
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
-  margin-right: 70px;
+  margin-right: clamp(20px, 5vw, 70px);
   text-decoration: none;
+  font-size: clamp(12px, 3vw, 14px);
+  display: inline-block;
 }
 
 .btn-primary:hover {
   background: #0085c7;
+}
+
+/* Media Queries para ajustes finos */
+@media (max-width: 768px) {
+  body {
+    padding-top: 65px;
+  }
+  
+  .header {
+    padding: clamp(6px, 1.5vh, 8px) 15px;
+  }
+  
+  .header h1 {
+    margin-left: 5px;
+  }
+  
+  .btn-primary {
+    margin-right: 10px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 55px;
+  }
+  
+  .header {
+    padding: 5px 10px;
+  }
+  
+  .header h1 {
+    font-size: 18px;
+    margin-left: 2px;
+  }
+  
+  .btn-primary {
+    margin-right: 5px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
 }
